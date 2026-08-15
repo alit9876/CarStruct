@@ -1,5 +1,3 @@
-# dsafinalproject-PID07
-
 # Car Showroom Management System
 
 ## Overview
