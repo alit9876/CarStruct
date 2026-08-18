@@ -1,73 +1,308 @@
-# dsafinalproject-PID07
+# CarStruct
 
-# Car Showroom Management System
+A **desktop-based Car Showroom Management System** built with Python and PyQt5. The project was designed to demonstrate the practical use of various **Data Structures and Algorithms (DSA)** in a real-world application.
 
-## Overview
-
-Welcome to the Car Showroom Management System repository! This desktop-based application aims to streamline the operations of a car showroom, offering a comprehensive solution for managing car inventory, and Test drive processes. By utilizing effective data structures and algorithms, the system provides a reliable platform for both showroom staff and customers, enhancing the overall experience of buying and selling cars
+CarStruct allows users to explore and manage car showroom data, search and sort vehicles, traverse manufacturer relationships, manage test-drive requests, and interact with the system through a graphical user interface.
 
 ## Features
-1. **Efficient Car Showroom Management:** Utilize a graph representation for car models and manufacturers to establish relationships within the showroom.
-2. **Streamlined Car Information Retrieval:** Implement sorting algorithms for quick retrieval and organization of car details based on various attributes like price or mileage.
-3. **Fast and Secure User Authentication:** Hashing for secure storage and retrieval of user credentials, ensuring a robust sign-up and sign-in system.
-4. **Organized Car Inventory:** Utilize AVL trees for efficient organization and navigation of the car inventory based on hierarchical categories and models.
-5. **Structured User Interaction History:** Implement a stack to manage user interactions, allowing for easy navigation through different sections of the application.
-6. **Optimized Test Drive Queue:** Use a queue to manage the waiting list for customers interested in test drives, ensuring a fair and organized process.
-7. **Reliable Data Persistence:** File handling for saving and loading data, ensuring persistent storage of car details and user information between application runs.
-8. **Graceful Error Handling:** Implement try-catch blocks for handling errors gracefully, providing informative messages to users in case of issues.
-9.**Efficient Manufacturer-wise Car Exploration:** Incorporate BFS and DFS algorithms to enable efficient exploration of car models based on their manufacturers, offering a systematic approach for users.
-10. **Comprehensive Search and Sorting:** Utilize binary search, linear search, quicksort, and mergesort for advanced search and sorting functionalities based on various car attributes such as price, mileage, etc.
-11. **Secure User Authentication:** Implement a secure sign-up and sign-in system with password hashing, ensuring the confidentiality and integrity of user credentials.
-13. **Dynamic Rehashing:** Implement dynamic rehashing in the hash table to ensure optimal performance and handling of collisions during user and car data management.
 
-## Technical Details
-- **Programming Languages:** Python
-- **Database Management:** Local database 
-- **User Interface:** Desktop application with an intuitive GUI for users.
+### Car Inventory Management
 
-## Requirements
-### Dependencies
+The application manages car showroom data and allows users to:
+
+- Browse available cars
+- View car information
+- Search for specific cars
+- Sort cars based on different attributes
+- Explore cars by manufacturer
+- Store and load showroom data using CSV files
+
+Car data is persisted in:
+
+```text
+Files/car_showroom_data.csv
+```
+
+---
+
+### User Authentication
+
+The project includes an authentication system for showroom access.
+
+- Admin credentials are stored locally
+- Login functionality is implemented through the GUI
+- Hashing is used as part of the authentication/data management approach
+
+Credential data is stored in:
+
+```text
+Files/AdminCredentials.csv
+```
+
+---
+
+### Car Searching
+
+Different searching techniques are implemented to retrieve car information efficiently.
+
+- Linear Search
+- Binary Search
+
+These algorithms are used depending on the type and organization of the data.
+
+---
+
+### Car Sorting
+
+The project implements multiple sorting algorithms for organizing car data based on attributes such as price, mileage, or other available information.
+
+Implemented sorting approaches include:
+
+- Quick Sort
+- Merge Sort
+
+---
+
+### Manufacturer and Car Relationships
+
+A graph-based representation is used to model relationships between manufacturers and their car models.
+
+The project implements graph traversal algorithms including:
+
+- Breadth-First Search (BFS)
+- Depth-First Search (DFS)
+
+This allows users to explore cars associated with manufacturers in different traversal patterns.
+
+---
+
+### AVL Tree
+
+An AVL Tree is used to organize data efficiently while maintaining a balanced binary search tree structure.
+
+This provides efficient operations for:
+
+- Insertion
+- Searching
+- Organized data storage
+
+---
+
+### Hash Table
+
+Hashing is used for efficient data access and management.
+
+The implementation includes concepts such as:
+
+- Hash-based storage
+- Collision handling
+- Dynamic rehashing
+
+This structure is used as part of the system's data management and authentication functionality.
+
+---
+
+### Test Drive Management
+
+The system manages customer test-drive requests using a **Queue**.
+
+This follows the FIFO principle:
+
+```text
+First Customer Request
+        ↓
+     Queue
+        ↓
+Next Customer Gets Test Drive
+```
+
+Test-drive data is stored locally in:
+
+```text
+Files/car_testdrive_data.csv
+```
+
+---
+
+### User Navigation History
+
+A **Stack** is used to manage user interaction history and navigation.
+
+This follows the LIFO principle:
+
+```text
+Latest Action
+     ↓
+   Stack
+     ↓
+Previous Actions
+```
+
+The stack allows the application to maintain a structured history of user interactions.
+
+## Data Structures and Algorithms
+
+One of the main purposes of CarStruct is to demonstrate the use of DSA concepts in a practical application.
+
+| Concept | Usage |
+|---|---|
+| Graph | Represents relationships between manufacturers and cars |
+| BFS | Breadth-first exploration of graph data |
+| DFS | Depth-first exploration of graph data |
+| AVL Tree | Balanced organization and searching of data |
+| Hash Table | Efficient data storage and lookup |
+| Queue | Test-drive request management |
+| Stack | User interaction/navigation history |
+| Linear Search | Sequential data searching |
+| Binary Search | Efficient searching on sorted data |
+| Quick Sort | Sorting car data |
+| Merge Sort | Sorting car data |
+| File Handling | Persistent storage using CSV files |
+
+## Project Structure
+
+```text
+CarStruct/
+│
+├── Components/
+│   ├── Data_Structures/
+│   │
+│   ├── Login.py
+│   ├── Our_Showroom.py
+│   ├── graphTraversals[DFSBFS].py
+│   ├── searchingSorting.py
+│   └── untitled.ui
+│
+├── Files/
+│   ├── AdminCredentials.csv
+│   ├── car_showroom_data.csv
+│   └── car_testdrive_data.csv
+│
+├── UI/
+│   ├── New folder/
+│   ├── loginUi4/
+│   ├── main.py
+│   ├── main.ui
+│   └── untitled.ui
+│
+├── images/
+│
+├── car_showroom_data.csv
+│
+├── main.py
+│
+└── README.md
+```
+
+## Technology Stack
+
+### Programming Language
+
 - Python
-- Appropriate GUI libraries
-- Local database
 
-### Data Structures and Algorithms
-1. **Graphs:** For car models and manufacturers to establish relationships within the showroom.
-2. **Sorting Algorithms:** For quick retrieval and organization of car details.
-3. **Hashing:** For secure storage and retrieval of user credentials.
-4. **Queue:**  Maintain a queue for test drives, with customers enqueued as they express interest and dequeued as they take their turn.
-5. **Trees:** Efficient organization and navigation of the car inventory.
-6. **Binary Search/Linear Search:** Efficient search operations.
-7. **File Handling:** Data persistence and backup.
-8. **Stack:** For navigating through car details or viewing previous selections.
-9. **Minimum Spanning Tree (MST):** to optimize the layout of the showroom floor. This can help minimize the distance customers need to cover when exploring different car models.
+### User Interface
 
+- PyQt5
 
-## Setup Instructions
-1. **Clone the Repository:**
-   ```bash
-   git clone https://gitlab.com/test6374834/dsafinalproject-pid11
+### Data Storage
 
-2. **Install Dependencies:**
-Follow the installation  
-- Install the interpreter of Python language
-- pip install Pyqt5
-- pip install pandas
-- pip install matplotlib 
-(Your system  will be ready to run this application after these 4 steps.)
+- CSV files
+- File handling
 
-3. **Run the Application**
-- Execute the main application file main.py for Python.
-- For execution on cmd, write following command:
-  ```bash
-  python main.py
+### Visualization
 
-## Packages and Libraries
-- PyQT5 (version 5.15.9) has been used for designing the User Interface.
-- Python (version 23.2.1) is used for programming.
-- "matplotlib" libraries of Python have been used for visualization of map of all Cars.
+- Matplotlib
 
-## Usage
-Follow the prompts and menus within the application.
-Enjoy the experience provided by the Car showroom Management System.
+### Data Processing
 
+- Pandas
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/alit9876/CarStruct.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd CarStruct
+```
+
+### 3. Install the required dependencies
+
+```bash
+pip install PyQt5 pandas matplotlib
+```
+
+### 4. Run the application
+
+```bash
+python main.py
+```
+
+## How It Works
+
+The application combines multiple DSA concepts into a car showroom management workflow.
+
+```text
+                ┌─────────────────┐
+                │   PyQt5 GUI     │
+                └────────┬────────┘
+                         │
+          ┌──────────────┼──────────────┐
+          │              │              │
+          ▼              ▼              ▼
+     Authentication   Car Inventory   Test Drives
+          │              │              │
+          ▼              ▼              ▼
+       Hashing       Search / Sort     Queue
+                         │
+                         ▼
+                  Graph Traversal
+                  BFS / DFS
+                         │
+                         ▼
+                      AVL Tree
+```
+
+## Learning Objectives
+
+This project demonstrates the practical implementation of:
+
+- Object-Oriented Programming
+- Graph data structures
+- BFS and DFS traversal
+- AVL Trees
+- Hash Tables
+- Stacks
+- Queues
+- Searching algorithms
+- Sorting algorithms
+- File handling
+- GUI development using PyQt5
+
+## Future Improvements
+
+Possible improvements include:
+
+- Database integration instead of CSV-based storage
+- More advanced user roles and authentication
+- Improved inventory management
+- Car booking and purchase management
+- Customer management
+- Sales reports and analytics
+- Better error handling and validation
+- Improved UI/UX
+- Unit testing for individual data structures
+- Packaging the application as a standalone desktop executable
+
+## Author
+
+**Muhammad Ali**
+
+## License
+
+This project was developed for educational purposes as a practical implementation of **Data Structures and Algorithms** concepts.
